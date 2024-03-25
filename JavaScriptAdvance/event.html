@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ordered List Example</title>
+</head>
+<body>
+
+<!-- Ordered List with ID and Alt Text -->
+<ol id="my_ordered_list" alt="This is an ordered list">
+  <li id="item_1" alt="First list item">First item</li>
+  <li id="item_2" alt="Second list item">Second item</li>
+  <li id="item_3" alt="Third list item">Third item</li>
+</ol>
+
+</body>
+<script>
+//     document.getElementById('item_1').addEventListener('click', () => {
+//     alert("your message")
+// })
+
+// document.getElementById('item_1').addEventListener('click', (e) => {
+//     console.log(e);
+// }, false)
+//type, timestamp, defaultPrevented
+//target, toElement, srcElement, currentTargent
+//clientX, clientY, screenX, screenY
+//altkey, ctrlkey, shiftkey, keyCode
+
+
+// //bubbling
+// document.getElementById('my_ordered_list').addEventListener('click', (e) => {
+//     console.log("Clicked inside ul");
+// }, false)
+
+// document.getElementById('item_1').addEventListener('click', (e) => {
+//     console.log("Clicked item_1");
+// }, false)
+
+
+// //capturing
+// document.getElementById('my_ordered_list').addEventListener('click', (e) => {
+//     console.log("Clicked inside ul");
+// }, true)
+
+// document.getElementById('item_1').addEventListener('click', (e) => {
+//     console.log("Clicked item_1");
+// }, true)
+
+    document.querySelector('#my_ordered_list').addEventListener('click', function (e) {
+        console.log(e.target.parentNode);
+        let removeIt = e.target.parentNode
+        removeIt.remove()
+    })
+
+
+</script>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head>
+<title>New Page</title>
+    </head>
+    <body>
+<h1>This Page http-url</h1>
+    </body>
+    <script>
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl)
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(this.responseText)
+                console.log(data.avatar_url);
+                console.log(data.followers);
+            }
+        }
+        xhr.send()
+    </script>
+</html>

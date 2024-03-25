@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <input type="text" id="taskInput" placeholder="Enter task...">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+    </div>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
+<script>
+// Function to add a new task
+function addTask() {
+    var taskInput = document.getElementById("taskInput");
+    var taskList = document.getElementById("taskList");
+
+    // Check if the input field is not empty
+    if (taskInput.value.trim() !== "") {
+        // Create new task item
+        var li = document.createElement("li");
+        var taskText = document.createTextNode(taskInput.value);
+        li.appendChild(taskText);
+
+        // Add delete button to the task item
+        var deleteBtn = document.createElement("button");
+        deleteBtn.innerHTML = "Delete";
+        deleteBtn.className = "delete-btn";
+        deleteBtn.onclick = function() {
+            taskList.removeChild(li);
+        };
+        li.appendChild(deleteBtn);
+
+        // Append the task item to the task list
+        taskList.appendChild(li);
+
+        // Clear the input field after adding the task
+        taskInput.value = "";
+    }
+}
+
+</script>
